@@ -3,19 +3,19 @@ import { slot4BrandConfig } from '@/editable/theme/brand.config'
 export const pagesContent = {
   home: {
     metadata: {
-      title: 'Stories, visuals, and discoverable content',
-      description: 'Explore articles, images, listings, and curated posts through a cleaner reading-first experience.',
-      openGraphTitle: 'Stories, visuals, and discoverable content',
-      openGraphDescription: 'Discover articles, visual posts, and connected content through a calmer reading-first experience.',
-      keywords: ['story platform', 'article site', 'visual content', 'content discovery'],
+      title: 'Business articles, listings, and practical resources',
+      description: 'Explore professional articles, useful business listings, and research-friendly resources on medwebst.',
+      openGraphTitle: 'Business articles, listings, and practical resources',
+      openGraphDescription: 'Discover professional reading, business listings, and practical resources through medwebst.',
+      keywords: ['business articles', 'business listings', 'professional resources', 'research guides'],
     },
     hero: {
-      badge: 'Latest stories and visuals',
-      title: ['A thoughtful home for', 'stories, visuals, and discovery.'],
-      description: 'Explore fresh articles, image-led posts, and discoverable content across the platform through a calmer and clearer browsing experience.',
-      primaryCta: { label: 'Read latest stories', href: '/article' },
-      secondaryCta: { label: 'Explore visuals', href: '/image' },
-      searchPlaceholder: 'Search stories, visuals, listings, and more',
+      badge: 'Latest articles and business discovery',
+      title: ['A practical home for', 'business reading and useful listings.'],
+      description: 'Explore timely articles, company information, guides, and resources shaped for professionals, founders, students, researchers, and customers.',
+      primaryCta: { label: 'Read latest articles', href: '/article' },
+      secondaryCta: { label: 'Explore businesses', href: '/listing' },
+      searchPlaceholder: 'Search articles, businesses, resources, and more',
       focusLabel: 'Focus',
       featureCardBadge: 'latest cover rotation',
       featureCardTitle: 'Latest posts shape the visual identity of the homepage.',
@@ -23,11 +23,11 @@ export const pagesContent = {
     },
     intro: {
       badge: 'About the platform',
-      title: 'Built for reading, browsing, and connecting different kinds of content.',
+      title: 'Built for business reading, browsing, and practical discovery.',
       paragraphs: [
-        'This site brings together article-style reading, visual browsing, and structured discovery so visitors can move naturally between different content types.',
-        'Instead of separating stories, visuals, and supporting resources into disconnected surfaces, the platform keeps them connected in one place with consistent navigation and easier exploration.',
-        'Whether someone starts with a story, an image-led post, a listing, or a resource page, they can keep discovering related content without friction.',
+        'This site brings together articles, business listings, and structured resources so visitors can move naturally between reading and discovery.',
+        'Professionals, startups, students, researchers, and customers can compare useful information without losing the thread between topics.',
+        'Whether someone starts with an article, a company profile, a listing, or a resource page, related information stays easy to reach.',
       ],
       sideBadge: 'At a glance',
       sidePoints: [
