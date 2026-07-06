@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Search } from 'lucide-react'
+import { ArrowRight, Bookmark, Building2, FileText, Image as ImageIcon, Megaphone, Search, UserRound } from 'lucide-react'
 import type { SitePost } from '@/lib/site-connector'
 import type { HomeTimeSection } from '@/lib/task-data'
 import type { TaskKey } from '@/lib/site-config'
@@ -14,6 +14,16 @@ type HomeSectionProps = {
 }
 
 const container = 'mx-auto w-full max-w-[var(--editable-container)] px-4 sm:px-6 lg:px-8'
+
+const taskIcon: Record<TaskKey, typeof FileText> = {
+  article: FileText,
+  listing: Building2,
+  classified: Megaphone,
+  image: ImageIcon,
+  sbm: Bookmark,
+  pdf: FileText,
+  profile: UserRound,
+}
 
 function dedupePosts(posts: SitePost[]) {
   const seen = new Set<string>()
@@ -168,7 +178,28 @@ export function EditableHomeHero({ primaryTask, primaryRoute, posts, timeSection
           {side ? <SideFeature post={side} href={postHref(primaryTask, side, primaryRoute)} /> : null}
         </div>
       </div>
-    </section>
+    </Link>
+  )
+}
+
+export function EditableStoryRail({ primaryRoute }: HomeSectionProps) {
+  const categories = SITE_CONFIG.tasks.filter((task) => task.enabled)
+  if (!categories.length) return null
+  return (
+    <section className="border-y border-[var(--editable-border)] bg-white">
+      <div className={`${container} flex flex-wrap items-center justify-center gap-x-8 gap-y-3 py-4 text-sm`}>
+        {categories.map((task) => {
+          const Icon = taskIcon[task.key] || FileText
+          return (
+            <Link key={task.key} href={task.route} className="inline-flex items-center gap-2 font-medium hover:text-[var(--slot4-accent)]">
+              <Icon className="h-4 w-4 text-[var(--slot4-accent)]" />
+              {task.label}
+            </Link>
+          )
+        })}
+        <Link href={primaryRoute} className="inline-flex items-center gap-1 font-bold text-[var(--slot4-accent)]">All updates <ArrowRight className="h-4 w-4" /></Link>
+      </div>
+    </Link>
   )
 }
 
@@ -259,12 +290,17 @@ export function EditableTimeCollections({ primaryTask, primaryRoute, posts, time
 export function EditableHomeCta() {
   return (
     <section className="bg-[var(--slot4-dark-bg)] text-white">
-      <div className={`${container} py-16`}>
-        <div className="editable-float max-w-3xl">
+      <div className={`${container} grid gap-10 py-16 lg:grid-cols-[0.9fr_1.1fr] lg:items-center`}>
+        <div className="editable-float">
           <p className="text-sm font-bold text-[#ffec35]">On demand insight and business discovery</p>
           <h2 className="editable-display mt-4 max-w-xl text-4xl font-bold leading-tight sm:text-5xl">Gain the ideas to expand your professional opportunities</h2>
           <p className="mt-5 max-w-xl text-base leading-8 text-white/78">Read practical articles, compare useful businesses, and find resources aligned with your next decision.</p>
           <Link href="/create" className="mt-8 inline-flex bg-[#ffec35] px-6 py-3 text-sm font-bold text-black">Create a post</Link>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {['Articles', 'Business listings', 'Research resources', 'Professional updates', 'Guides', 'Local discovery'].map((item) => (
+            <div key={item} className="border-2 border-[#89b7bd] px-5 py-4 text-base font-bold">{item}</div>
+          ))}
         </div>
       </div>
     </section>

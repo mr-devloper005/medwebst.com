@@ -20,6 +20,18 @@ const authNavItems = [
   { label: 'Sign in', href: '/login' },
 ]
 
+const publicNavItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Search', href: '/search' },
+]
+
+const authNavItems = [
+  { label: 'Sign up', href: '/signup' },
+  { label: 'Sign in', href: '/login' },
+]
+
 export function EditableNavbar() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
@@ -30,8 +42,8 @@ export function EditableNavbar() {
     <header className="sticky top-0 z-50 border-b border-[var(--editable-border)] bg-white text-[var(--slot4-page-text)]">
       <div className="bg-[var(--slot4-accent)]">
         <div className="mx-auto flex min-h-[86px] max-w-[var(--editable-container)] items-center gap-5 px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="shrink-0 text-white" aria-label={`${SITE_CONFIG.name} home`}>
-            <EditableBrand />
+          <Link href="/" className="editable-display shrink-0 text-5xl font-bold leading-none tracking-[-0.06em] text-white sm:text-6xl">
+            {SITE_CONFIG.name}
           </Link>
 
           <form action="/search" className="ml-auto hidden w-full max-w-xl md:block">

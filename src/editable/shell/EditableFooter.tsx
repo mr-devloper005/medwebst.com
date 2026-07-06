@@ -18,6 +18,18 @@ const footerAuthLinks = [
   { label: 'Sign in', href: '/login' },
 ]
 
+const footerLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Search', href: '/search' },
+]
+
+const footerAuthLinks = [
+  { label: 'Sign up', href: '/signup' },
+  { label: 'Sign in', href: '/login' },
+]
+
 export function EditableFooter() {
   const year = new Date().getFullYear()
   const { session, logout } = useEditableLocalAuthSession()
@@ -26,7 +38,7 @@ export function EditableFooter() {
     <footer className="bg-[var(--editable-footer-bg)] text-[var(--editable-footer-text)]">
       <div className="mx-auto grid max-w-[var(--editable-container)] gap-10 px-4 py-14 sm:px-6 lg:grid-cols-[1.25fr_2fr] lg:px-8">
         <div>
-          <Link href="/" className="inline-flex text-white" aria-label={`${SITE_CONFIG.name} home`}><EditableBrand compact /></Link>
+          <Link href="/" className="editable-display text-5xl font-bold tracking-[-0.06em] text-white">{SITE_CONFIG.name}</Link>
           <p className="mt-5 max-w-md text-sm leading-7 text-white/72">
             Practical articles, useful business listings, and research-friendly resources for people making better professional decisions.
           </p>
