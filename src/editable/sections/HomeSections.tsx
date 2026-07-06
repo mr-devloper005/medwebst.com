@@ -178,7 +178,7 @@ export function EditableHomeHero({ primaryTask, primaryRoute, posts, timeSection
           {side ? <SideFeature post={side} href={postHref(primaryTask, side, primaryRoute)} /> : null}
         </div>
       </div>
-    </section>
+    </Link>
   )
 }
 
@@ -199,7 +199,7 @@ export function EditableStoryRail({ primaryRoute }: HomeSectionProps) {
         })}
         <Link href={primaryRoute} className="inline-flex items-center gap-1 font-bold text-[var(--slot4-accent)]">All updates <ArrowRight className="h-4 w-4" /></Link>
       </div>
-    </section>
+    </Link>
   )
 }
 

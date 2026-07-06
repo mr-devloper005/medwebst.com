@@ -6,6 +6,19 @@ import { usePathname } from 'next/navigation'
 import { LogOut, Menu, Plus, Search, UserRound, X } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
 import { useEditableLocalAuthSession } from '@/editable/components/EditableLocalAuthForms'
+import { EditableBrand } from '@/editable/shell/EditableBrand'
+
+const publicNavItems = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Search', href: '/search' },
+]
+
+const authNavItems = [
+  { label: 'Sign up', href: '/signup' },
+  { label: 'Sign in', href: '/login' },
+]
 
 const publicNavItems = [
   { label: 'Home', href: '/' },

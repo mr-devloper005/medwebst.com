@@ -4,6 +4,19 @@ import Link from 'next/link'
 import { LogOut } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
 import { useEditableLocalAuthSession } from '@/editable/components/EditableLocalAuthForms'
+import { EditableBrand } from '@/editable/shell/EditableBrand'
+
+const footerLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Search', href: '/search' },
+]
+
+const footerAuthLinks = [
+  { label: 'Sign up', href: '/signup' },
+  { label: 'Sign in', href: '/login' },
+]
 
 const footerLinks = [
   { label: 'Home', href: '/' },
