@@ -183,15 +183,6 @@ function ArchivePostCard({ post, task, basePath, index }: { post: SitePost; task
   return <ArticleArchiveCard post={post} href={href} index={index} />
 }
 
-function CardArrow({ label }: { label: string }) {
-  return (
-    <span className="mt-5 inline-flex items-center gap-1.5 text-sm font-medium text-[var(--tk-accent)]">
-      {label}
-      <ArrowUpRight className="h-4 w-4 transition duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-    </span>
-  )
-}
-
 // Yelp-style red star ratings. Prefers real rating/review fields, falls back to
 // a stable derived value so the UI always reads well (wire to real data later).
 const hashStr = (value: string) => {
