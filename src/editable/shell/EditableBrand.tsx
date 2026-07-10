@@ -5,9 +5,9 @@ export function EditableBrand({ compact = false }: { compact?: boolean }) {
     <span className="inline-flex items-center gap-3" aria-label={SITE_CONFIG.name}>
       <span
         aria-hidden="true"
-        className={`editable-display inline-flex shrink-0 items-center justify-center border-2 border-current bg-white font-bold leading-none text-[var(--slot4-accent)] shadow-[4px_4px_0_currentColor] ${compact ? 'h-10 w-10 text-2xl' : 'h-12 w-12 text-3xl sm:h-14 sm:w-14 sm:text-4xl'}`}
+        className={`inline-flex shrink-0 items-center justify-center overflow-hidden bg-white shadow-[4px_4px_0_currentColor] ${compact ? 'h-10 w-10' : 'h-12 w-12 sm:h-14 sm:w-14'}`}
       >
-        M
+        <img src="/favicon.png" alt="" className="h-full w-full object-cover" />
       </span>
       <span className={`editable-display font-bold leading-none text-white ${compact ? 'text-3xl' : 'text-4xl sm:text-5xl'}`}>
         {SITE_CONFIG.name}
