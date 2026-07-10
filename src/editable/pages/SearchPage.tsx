@@ -120,7 +120,7 @@ export default async function SearchPage({ searchParams }: { searchParams?: Prom
           </div>
 
           <div className="mx-auto max-w-6xl px-0 py-6">
-            <Ads slot="header" showLabel eager className="mx-auto w-full" />
+            <Ads slot="in-feed" showLabel eager className="mx-auto w-full" />
           </div>
 
           <div className="mt-10 flex flex-wrap items-end justify-between gap-4">
@@ -141,9 +141,6 @@ export default async function SearchPage({ searchParams }: { searchParams?: Prom
               <p className="mt-3 text-sm font-semibold opacity-60">Try a different keyword, task type, or category.</p>
             </div>
           )}
-          <div className="mx-auto max-w-6xl px-0 py-8">
-            <Ads slot="footer" showLabel className="mx-auto w-full" />
-          </div>
         </section>
       </main>
     </EditableSiteShell>

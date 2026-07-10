@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { LogOut, Menu, Plus, Search, UserRound, X } from 'lucide-react'
 import { SITE_CONFIG } from '@/lib/site-config'
 import { useEditableLocalAuthSession } from '@/editable/components/EditableLocalAuthForms'
+import { EditableBrand } from '@/editable/shell/EditableBrand'
 
 const publicNavItems = [
   { label: 'Home', href: '/' },
@@ -29,8 +30,8 @@ export function EditableNavbar() {
     <header className="sticky top-0 z-50 border-b border-[var(--editable-border)] bg-white text-[var(--slot4-page-text)]">
       <div className="bg-[var(--slot4-accent)]">
         <div className="mx-auto flex min-h-[86px] max-w-[var(--editable-container)] items-center gap-5 px-4 sm:px-6 lg:px-8">
-          <Link href="/" className="editable-display shrink-0 text-5xl font-bold leading-none tracking-[-0.06em] text-white sm:text-6xl">
-            {SITE_CONFIG.name}
+          <Link href="/" className="shrink-0 text-white" aria-label={`${SITE_CONFIG.name} home`}>
+            <EditableBrand />
           </Link>
 
           <form action="/search" className="ml-auto hidden w-full max-w-xl md:block">
