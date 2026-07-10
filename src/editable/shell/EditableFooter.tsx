@@ -18,6 +18,18 @@ const footerAuthLinks = [
   { label: 'Sign in', href: '/login' },
 ]
 
+const footerLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Search', href: '/search' },
+]
+
+const footerAuthLinks = [
+  { label: 'Sign up', href: '/signup' },
+  { label: 'Sign in', href: '/login' },
+]
+
 export function EditableFooter() {
   const year = new Date().getFullYear()
   const { session, logout } = useEditableLocalAuthSession()

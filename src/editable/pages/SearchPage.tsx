@@ -141,6 +141,9 @@ export default async function SearchPage({ searchParams }: { searchParams?: Prom
               <p className="mt-3 text-sm font-semibold opacity-60">Try a different keyword, task type, or category.</p>
             </div>
           )}
+          <div className="mx-auto max-w-6xl px-0 py-8">
+            <Ads slot="footer" showLabel className="mx-auto w-full" />
+          </div>
         </section>
       </main>
     </EditableSiteShell>
