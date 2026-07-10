@@ -20,18 +20,6 @@ const authNavItems = [
   { label: 'Sign in', href: '/login' },
 ]
 
-const publicNavItems = [
-  { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
-  { label: 'Contact', href: '/contact' },
-  { label: 'Search', href: '/search' },
-]
-
-const authNavItems = [
-  { label: 'Sign up', href: '/signup' },
-  { label: 'Sign in', href: '/login' },
-]
-
 export function EditableNavbar() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
